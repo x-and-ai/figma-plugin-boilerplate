@@ -1,0 +1,10 @@
+{
+  "globals": {
+    "figma": "readonly",
+    "__html__": "readonly",
+    "logD": "readonly",
+    "logI": "readonly",
+    "logW": "readonly",
+    "logE": "readonly"
+  }
+}
