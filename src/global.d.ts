@@ -3,7 +3,7 @@ declare global {
 
   type LoggerType = 'ERROR' | 'WARNING' | 'INFO' | 'DEBUG';
   type LoggerSource = 'UI' | 'CODE';
-  type Loggable = string | object | number | undefined;
+  type Loggable = string | Record<string, unknown> | number | undefined;
   type LogMethod = (message: Loggable) => void;
   namespace NodeJS {
     interface Global {
