@@ -1,9 +1,10 @@
 const path = require('path');
 const chalk = require('chalk');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
+// const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const PostCSSPresetEnv = require('postcss-preset-env');
 const { DefinePlugin } = require('webpack');
+const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin');
 const { name: packageName } = require('./package.json');
 
 const { log } = console;
@@ -107,7 +108,8 @@ module.exports = (env, argv) => {
         inlineSource: '.(js|css)$',
         chunks: ['ui'],
       }),
-      new HtmlWebpackInlineSourcePlugin(),
+      new InlineChunkHtmlPlugin(HtmlWebpackPlugin, ['ui']),
+      // new HtmlWebpackInlineSourcePlugin(),
     ],
   };
 };
